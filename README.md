@@ -12,8 +12,8 @@
 
 1. JDBC driver
 2. Spring Data JDBC `org.springframework.jdbc.core.JdbcTemplate`
-3. Spring Data JDBC`CRUDRepository`
-4. Spring Data JPA`JpaRepository`
+3. Spring Data JDBC `CRUDRepository`
+4. Spring Data JPA `JpaRepository`
 
 ### 1. JDBC driver
 
@@ -68,7 +68,7 @@ public class ConnectDB {
             System.out.println("드라이버 로딩 실패");
             throw e;
         } catch (SQLException e) {
-            System.out.println("SQL Error : "e.getMessage());
+            System.out.println("SQL Error : "+ e.getMessage());
             throw e;
         } finally {
             // 자원 반납
@@ -145,7 +145,7 @@ public class ConnectBySpringDataJdbc {
 
 </details>
 
-### 3. Spring Data JDBC`org.springframework.data.repository.CrudRepository`
+### 3. Spring Data JDBC `org.springframework.data.repository.CrudRepository`
 
 ````bash
 dependencies {
@@ -231,7 +231,7 @@ public class JdbcClientTest {
 
 </details>
 
-### 4. Spring Data JPA`org.springframework.data.jpa.repository.JpaRepository`
+### 4. Spring Data JPA `org.springframework.data.jpa.repository.JpaRepository`
 
 ````bash
 dependencies {
