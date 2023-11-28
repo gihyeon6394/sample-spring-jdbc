@@ -1,7 +1,7 @@
 #### 개발환경
 
 - Java 17
-- Spring Bot 3.2
+- Spring Boot 3.2
 - Gradle 8.4
 - MySQL 8.0.28
 - lombok
@@ -300,7 +300,7 @@ import static org.hamcrest.Matchers.notNullValue;
 public class JdbcClientTest {
 
     @Autowired
-    private UserEntityRepository userRepository; // Spring Data JPAJpaRepository
+    private UserEntityRepository userRepository;
 
     @Test
     @DisplayName("Spring Data JPAJpaRepository")
