@@ -11,11 +11,11 @@
 ## Java Web Application에서 DB 접근 방법
 
 1. JDBC driver
-2. Spring Daata JDBC `org.springframework.jdbc.core.JdbcTemplate`
-3. Spring Data JDBC + `CRUDRepository`
-4. Spring Data JPA + `JpaRepository`
+2. Spring Data JDBC `org.springframework.jdbc.core.JdbcTemplate`
+3. Spring Data JDBC`CRUDRepository`
+4. Spring Data JPA`JpaRepository`
 
-### 1. JDBC driver 활용
+### 1. JDBC driver
 
 ````bash
 dependencies {
@@ -25,9 +25,8 @@ dependencies {
 }
 ````
 
-<summary>Java 예제</summary>
-
 <details>
+<summary>Java 예제</summary>
 
 ```java
 import org.springframework.stereotype.Component;
@@ -69,7 +68,7 @@ public class ConnectDB {
             System.out.println("드라이버 로딩 실패");
             throw e;
         } catch (SQLException e) {
-            System.out.println("SQL Error : " + e.getMessage());
+            System.out.println("SQL Error : "e.getMessage());
             throw e;
         } finally {
             // 자원 반납
@@ -96,7 +95,7 @@ public class ConnectDB {
 
 </details>
 
-#### 2. Spring Daata JDBC `org.springframework.jdbc.core.JdbcTemplate`
+#### 2. Spring Data JDBC `org.springframework.jdbc.core.JdbcTemplate`
 
 ````bash
 dependencies {
@@ -115,9 +114,9 @@ spring:
     password: root
 ```
 
-<summary>Java 예제</summary>
-
 <details>
+
+<summary>Java 예제</summary>
 
 ```java
 import com.example.jdbc.dto.UserDto;
@@ -146,7 +145,7 @@ public class ConnectBySpringDataJdbc {
 
 </details>
 
-### 3. Spring Data JDBC + `org.springframework.data.repository.CrudRepository`
+### 3. Spring Data JDBC`org.springframework.data.repository.CrudRepository`
 
 ````bash
 dependencies {
@@ -156,9 +155,9 @@ dependencies {
 }
 ````
 
-<summary>Java 예제</summary>
-
 <details>
+
+<summary>Java 예제</summary>
 
 ```java
 
@@ -214,7 +213,7 @@ public class JdbcClientTest {
     private UserDtoRepository userDtoRepository;
 
     @Test
-    @DisplayName("Spring Data JDBC + CrudRepository")
+    @DisplayName("Spring Data JDBCCrudRepository")
     @Transactional
     void db_connenct_with_spring_jdbc_crud_repository() {
 
@@ -232,7 +231,7 @@ public class JdbcClientTest {
 
 </details>
 
-### 4. Spring Data JPA + `org.springframework.data.jpa.repository.JpaRepository`
+### 4. Spring Data JPA`org.springframework.data.jpa.repository.JpaRepository`
 
 ````bash
 dependencies {
@@ -246,6 +245,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
 ````
+
+<details>
 
 <summary>Java 예제</summary>
 
@@ -299,10 +300,10 @@ import static org.hamcrest.Matchers.notNullValue;
 public class JdbcClientTest {
 
     @Autowired
-    private UserEntityRepository userRepository; // Spring Data JPA + JpaRepository
+    private UserEntityRepository userRepository; // Spring Data JPAJpaRepository
 
     @Test
-    @DisplayName("Spring Data JPA + JpaRepository")
+    @DisplayName("Spring Data JPAJpaRepository")
     void db_connenct_with_spring_jpa_jpa_repository() {
 
         List<UserEntity> userEntityList = userRepository.findAll();
@@ -316,3 +317,5 @@ public class JdbcClientTest {
 }
 
 ```
+
+</details>
