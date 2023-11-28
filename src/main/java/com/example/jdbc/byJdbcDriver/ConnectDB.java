@@ -1,4 +1,4 @@
-package com.example.jdbc.onlyJdbcDriver;
+package com.example.jdbc.byJdbcDriver;
 
 import com.example.jdbc.dto.UserDto;
 import org.springframework.stereotype.Component;

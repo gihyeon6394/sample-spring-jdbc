@@ -1,4 +1,4 @@
-package com.example.jdbc.withSpringJdbc;
+package com.example.jdbc.bySpringJdbc;
 
 import com.example.jdbc.dto.UserDto;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -11,7 +11,7 @@ public class ConnectBySpringDataJdbc {
 
     private JdbcTemplate jdbcTemplate;
 
-    // Spring이 UserRepository 생성 시 JdbcTemplate을 주입
+    // Spring이 ConnectBySpringDataJdbc 생성 시 JdbcTemplate을 주입
     public ConnectBySpringDataJdbc(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }

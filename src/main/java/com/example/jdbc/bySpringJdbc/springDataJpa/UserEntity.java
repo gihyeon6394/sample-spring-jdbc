@@ -1,4 +1,4 @@
-package com.example.jdbc.withSpringDataJpa;
+package com.example.jdbc.bySpringJdbc.springDataJpa;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

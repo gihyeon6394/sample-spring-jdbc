@@ -1,4 +1,4 @@
-package com.example.jdbc.withSpringJdbc;
+package com.example.jdbc.bySpringJdbc;
 
 import com.example.jdbc.dto.UserDto;
 import org.springframework.data.repository.CrudRepository;

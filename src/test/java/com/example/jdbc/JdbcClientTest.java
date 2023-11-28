@@ -1,11 +1,11 @@
 package com.example.jdbc;
 
+import com.example.jdbc.byJdbcDriver.ConnectDB;
+import com.example.jdbc.bySpringJdbc.ConnectBySpringDataJdbc;
+import com.example.jdbc.bySpringJdbc.UserDtoRepository;
+import com.example.jdbc.bySpringJdbc.springDataJpa.UserEntity;
+import com.example.jdbc.bySpringJdbc.springDataJpa.UserEntityRepository;
 import com.example.jdbc.dto.UserDto;
-import com.example.jdbc.onlyJdbcDriver.ConnectDB;
-import com.example.jdbc.withSpringDataJpa.UserEntity;
-import com.example.jdbc.withSpringDataJpa.UserEntityRepository;
-import com.example.jdbc.withSpringJdbc.ConnectBySpringDataJdbc;
-import com.example.jdbc.withSpringJdbc.UserDtoRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ import static org.hamcrest.Matchers.notNullValue;
 public class JdbcClientTest {
 
     @Autowired
-    private ConnectDB ConnectDB; // JDBC Driver
+    private ConnectDB connectDB; // JDBC Driver
 
     @Autowired
     private ConnectBySpringDataJdbc connectBySpringDataJdbc; // Spring Data JDBC
@@ -40,7 +40,7 @@ public class JdbcClientTest {
     @DisplayName("JDBC Driver")
     void db_connenct_only_jdbc_driver() throws SQLException, ClassNotFoundException {
 
-        List<UserDto> userDtoList = ConnectDB.getUserList();
+        List<UserDto> userDtoList = connectDB.getUserList();
 
         userDtoList.stream().forEach(System.out::println);
 

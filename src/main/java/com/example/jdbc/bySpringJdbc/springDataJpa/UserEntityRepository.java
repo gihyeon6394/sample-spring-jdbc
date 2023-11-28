@@ -1,4 +1,4 @@
-package com.example.jdbc.withSpringDataJpa;
+package com.example.jdbc.bySpringJdbc.springDataJpa;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
