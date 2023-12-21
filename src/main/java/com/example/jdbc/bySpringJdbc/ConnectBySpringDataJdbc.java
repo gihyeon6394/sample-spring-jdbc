@@ -9,7 +9,7 @@ import java.util.List;
 @Repository // 스프링 빈으로 등록
 public class ConnectBySpringDataJdbc {
 
-    private JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate; // bean
 
     // Spring이 ConnectBySpringDataJdbc 생성 시 JdbcTemplate을 주입
     public ConnectBySpringDataJdbc(JdbcTemplate jdbcTemplate) {

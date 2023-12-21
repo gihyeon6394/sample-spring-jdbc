@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <Appenders>
+        <!-- 콘솔 -->
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{MM-dd HH:mm:ss}:%-3relative] %-5level %logger{35} - %msg%n"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <!-- Application Loggers --><!-- Root 보다 우선 순위가 높습니다. -->
+        <logger name="com.example." level="INFO" additivity="false">
+            <AppenderRef ref="console"/>
+        </logger>
+
+        <!-- FATAL, ERROR, WARN, INFO, DEBUG, TRACE -->
+        <Root level="INFO">
+            <AppenderRef ref="console"/>
+        </Root>
+    </Loggers>
+</Configuration>

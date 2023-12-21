@@ -86,4 +86,12 @@ public class JdbcClientTest {
         assertThat(CollectionUtils.isEmpty(userEntityList), is(false));
     }
 
+    @Test
+    @DisplayName("save")
+    void test(){
+        UserEntity userEntity = new UserEntity();
+        userEntity.setName("test");
+        userRepository.save(userEntity);
+    }
+
 }

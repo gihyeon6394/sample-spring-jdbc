@@ -23,8 +23,10 @@ public class ConnectDB {
 
             // JDBC 드라이버 로딩
             Class.forName("com.mysql.cj.jdbc.Driver");
+
             // DB 연결 (가장 느린 부분, DB-WAS network delay)
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/example_jdbc?serverTimezone=Asia/Seoul", "root", "root");
+
             // PreparedStatement 생성
             statement = connection.prepareStatement("select id, name from user");
             // 쿼리 실행
