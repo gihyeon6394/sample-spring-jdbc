@@ -4,7 +4,7 @@ server:
 spring:
   datasource: # JDBC DB 접속 정보
     driver-class: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/example_jdbc?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/example_jdbc?serverTimezone=UTC&characterEncoding=UTF-8
     username: root
     password: root
   jpa: # JPA 설정
